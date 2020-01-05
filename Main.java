@@ -6,8 +6,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String unitSystemInput;
         String convertingBetween;
-        boolean firstStringAnswer;
-
+        double metricToImperial;
+        double metricToImperialResult;
 
         while (true) {
             System.out.print("From wich unit system you want to convert? (Metric or Imperial):");
@@ -31,6 +31,10 @@ public class Main {
                     break;
                 }else if(convertingBetween.equals("imperial unit system")) {
                     System.out.println("write down your values 2");
+                    System.out.print("Meters to feet. Write your lenght. (in meters):");
+                    metricToImperial = scanner.nextDouble();
+                    metricToImperialResult = metricToImperial * 3.28;                    // 1m = 3.28feet
+                    System.out.println("It is " + metricToImperialResult + " feet");
                     break;
                 }
             }else if (unitSystemInput.equals("imperial")){
