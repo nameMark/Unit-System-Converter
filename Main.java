@@ -6,8 +6,13 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String unitSystemInput;
         String convertingBetween;
+        //2
         double metricToImperial;
         double metricToImperialResult;
+        //4
+        double imperialToMetric;
+        double imperialToMetricResult;
+
 
         while (true) {
             System.out.print("From wich unit system you want to convert? (Metric or Imperial):");
@@ -15,7 +20,7 @@ public class Main {
             unitSystemInput = scanner.nextLine().toLowerCase().trim();
 
             if ((unitSystemInput.equals("metric")) || (unitSystemInput.equals("imperial"))) {
-                System.out.println(unitSystemInput);
+                //System.out.println(unitSystemInput);
                 break;
             }
             System.out.println("Invalid input! Enter value again.:");
@@ -45,6 +50,10 @@ public class Main {
                     break;
                 }else if(convertingBetween.equals("metric unit system")) {
                     System.out.println("write down your values 4");
+                    System.out.print("Degrees Fahrenheit to degrees Celsius. Write your temperature. (in Fahrenheit):");
+                    imperialToMetric = scanner.nextDouble();
+                    imperialToMetricResult = Math.round( (imperialToMetric - 32) / (1.8) );              // °C = (°F - 32) / 1.8
+                    System.out.println("It is " + imperialToMetricResult + " °C");
                     break;
                 }
 
