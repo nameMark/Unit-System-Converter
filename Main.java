@@ -7,8 +7,11 @@ public class Main {
         String unitSystemInput;
         String convertingBetween;
         //2
-        double metricToImperial;
-        double metricToImperialResult;
+        String convertingBetweenMetricToImperial;
+        double metricToImperialTemperature;
+        double metricToImperialTemperatureResult;
+        double metricToImperialLength;
+        double metricToImperialLengthResult;
         //4
         double imperialToMetric;
         double imperialToMetricResult;
@@ -35,12 +38,22 @@ public class Main {
                     System.out.println("write down your values 1");
                     break;
                 }else if(convertingBetween.equals("imperial unit system")) {
-                    System.out.println("write down your values 2");
-                    System.out.print("Meters to feet. Write your lenght. (in meters):");
-                    metricToImperial = scanner.nextDouble();
-                    metricToImperialResult = metricToImperial * 3.28;                    // 1m = 3.28feet
-                    System.out.println("It is " + metricToImperialResult + " feet");
-                    break;
+                    System.out.print("Do you want to convert meters to feet or °C to °F? Write length or temperature.:");
+                    //System.out.println("write down your values 2");
+                    convertingBetweenMetricToImperial = scanner.nextLine().toLowerCase().trim();
+                    if (convertingBetweenMetricToImperial.equals("length")) {
+                        System.out.print("Meters to feet. Write your length. (in meters):");
+                        metricToImperialLength = scanner.nextDouble();
+                        metricToImperialLengthResult = Math.round( metricToImperialLength * 3.28 );                    // 1m = 3.28feet
+                        System.out.println("It is " + metricToImperialLengthResult + " feet");
+                        break;
+                    }else if (convertingBetweenMetricToImperial.equals("temperature")){
+                        System.out.print("Degrees Celsius to degrees Fahrenheit. Write temperature. (in Celsius):");
+                        metricToImperialTemperature = scanner.nextDouble();
+                        metricToImperialTemperatureResult = Math.round( (metricToImperialTemperature * 1.8) + 32 );
+                        System.out.println("It is " + metricToImperialTemperatureResult + " °F");
+                        break;
+                    }
                 }
             }else if (unitSystemInput.equals("imperial")){
                 System.out.print("Do you want to convert to imperial values or metric unit system?:");
